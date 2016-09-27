@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="head">
+    <file>bomb.png</file>
+    <file>head.html</file>
+  </qresource>
+</RCC>

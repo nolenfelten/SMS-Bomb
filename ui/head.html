@@ -1,0 +1,125 @@
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #000000;
+				text-align: center;
+			}
+			
+			h2 {
+				padding: 3px;
+				align: center;
+			}
+			
+			#bomb1 {
+				position: absolute;
+				opacity: 1;
+				top: 0%;
+				left: 0%;
+				overflow: hidden;
+				z-index: -1;
+			}
+			
+			#bomb2 {
+				align: center;
+				position: absolute;
+				opacity: 1;
+				top: 0%;
+				right: 0%;
+				overflow: hidden;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	
+	<body>
+				<hr width=100% color="#FF0000"/>
+							
+				<h2>
+					<span class='rainbow'>SMS Bomb</span>
+				</h2>
+				
+				<span class='rainbow'>Project By: Nolen Felten</span>
+				
+				<hr width=100% color="#FF0000"/>
+			<img src="http://retrogifs.com/gifs/Objects/Bomb/BOMB.GIF" width="190px" height="119px" id="bomb1">
+			<img src="http://retrogifs.com/gifs/Objects/Bomb/BOMB.GIF" width="190px" height="119px" id="bomb2">
+	</body>
+
+	<script>
+
+		var speed = 20;
+
+		var hex = new Array("00", "14", "28", "3C", "50", "64", "78", "8C", "A0", "B4", "C8", "DC", "F0");
+
+		var red = 1;
+		var green = 1;
+		var blue = 1;
+
+
+		var seq = 1;
+
+		var element = document.getElementsByClassName("rainbow");
+
+		function changetext() {
+			rainbow = "#" + hex[red] + hex[green] + hex[blue];
+
+			for (index = 0; index < element.length; ++index) {
+				element[index].style.color = rainbow;
+			};
+		};
+
+		function change() {
+			
+			if (seq == 6) {
+				blue--;
+			
+				if (blue == 0) { seq = 1; };
+			};
+			
+			
+			
+			
+			if (seq == 5){
+				red++;
+				
+				if (red == 12 ){ seq = 6; };
+			};
+		
+			if (seq == 4) {
+				green--;
+			
+				if (green == 0) { seq = 5; };
+			};
+			
+			if (seq == 3) {
+				blue++;
+				if (blue == 12){ seq = 4; };
+			};
+			
+			
+			if (seq == 2) { 
+				red--;
+				if (red == 0) { seq = 3; };
+			};
+		
+			if (seq == 1) {
+				green++;
+			
+				if (green == 12) { seq = 2; };
+			};
+		
+
+			changetext();
+		};
+
+		function starteffect() {
+			
+			flash = setInterval("change()", speed);
+			
+		};
+
+		starteffect();
+	</script>
+	
+</html>
