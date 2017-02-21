@@ -44,11 +44,10 @@ class Main:
 		# GUI
 		self.view.pushButton.connect(self.view.pushButton, QtCore.SIGNAL("clicked()"), self.fork)
 		
-		
-		
-			
+		# Draw window
 		self.view.show()
 		
+		# Exit application on close button
 		sys.exit(app.exec_())
 		
 
@@ -63,8 +62,7 @@ class View(QtGui.QFrame):
 
 	def __init__(self):
 		super(View, self).__init__()
-		
-		
+				
 		
 		self.setObjectName(_fromUtf8("Frame"))
 		self.setWindowModality(QtCore.Qt.ApplicationModal)
